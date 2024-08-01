@@ -2,11 +2,38 @@
 <html>
 <head>
   <title>English to Hindi Translator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
   <textarea id="englishText" placeholder="Enter English text"></textarea>
   <button onclick="translate()">Translate</button>
   <textarea id="hindiText" placeholder="Hindi translation"></textarea>
-  <script src="translator.js"></script>
+
+  <script>
+    function translate() {
+      const englishText = $('#englishText').val();
+      const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+
+      // This is a simplified example without error handling
+      $.ajax({
+        url: 'https://translation.googleapis.com/language/translate/v2',
+        type: 'POST',
+        data: JSON.stringify({
+          q: englishText,
+          target: 'hi' // Target language: Hindi
+        }),
+        headers: {
+          'Authorization': 'Bearer ' + apiKey,
+          'Content-Type': 'application/json'
+        },
+        success: function(response) {
+          $('#hindiText').val(response.data.translations[0].translatedText);
+        },
+        error: function(error) {
+          console.error('Error:', error);
+        }
+      });
+    }
+  </script>
 </body>
 </html>
