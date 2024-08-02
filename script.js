@@ -3,7 +3,7 @@ const hindiTranslationElement = document.getElementById('hindi-translation');
 
 // Load Hindi translations from JSON file
 const hindiTranslations = {};
-fetch('/lang/hi.json')
+fetch('lang/hi.json')
    .then(response => response.json())
    .then(data => hindiTranslations = data);
 
