@@ -3,7 +3,7 @@ const hindiTranslationElement = document.getElementById('hindi-translation');
 
 // Load Hindi translations from JSON file
 const hindiTranslations = {};
-fetch('lang/hi.json')
+fetch('https://raw.githubusercontent.com/xpert0/TypoMatrix/master/lang/hi.json')
    .then(response => response.json())
    .then(data => hindiTranslations = data);
 
