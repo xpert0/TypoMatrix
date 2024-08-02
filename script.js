@@ -1,15 +1,19 @@
-function translate() {
-  const englishText = document.getElementById("englishText").value;
-  const hindiTextDiv = document.getElementById("hindiText");
+const translateForm = document.getElementById('translate-form');
+const hindiTranslationElement = document.getElementById('hindi-translation');
 
-  // Create a form to submit to Google Translate
-  const form = document.createElement("form");
-  form.method = "GET";
-  form.action = "https://translate.google.com/translate_a/single?client=t&sl=en&tl=hi&text=" + encodeURIComponent(englishText);
-  form.target = "_blank"; // Open in a new tab
+// Load Hindi translations from JSON file
+const hindiTranslations = {};
+fetch('/lang/hi.json')
+   .then(response => response.json())
+   .then(data => hindiTranslations = data);
 
-  // Submit the form
-  document.body.appendChild(form);
-  form.submit();
-  document.body.removeChild(form);
-}
+translateForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const englishWord = document.getElementById('english-word').value;
+    const hindiTranslation = hindiTranslations[englishWord];
+    if (hindiTranslation) {
+        hindiTranslationElement.innerText = hindiTranslation;
+    } else {
+        hindiTranslationElement.innerText = 'Translation not found';
+    }
+});
