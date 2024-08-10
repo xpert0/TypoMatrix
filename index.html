@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English to Hindi Translator</title>
+  <title>English to Hindi Translator</title>
 </head>
 <body>
-    <h1>English to Hindi Translator</h1>
-    <form id="translate-form">
-        <label for="english-word">English Word:</label>
-        <input type="text" id="english-word" name="english-word">
-        <button type="submit">Translate</button>
-        <p id="hindi-translation"></p>
-    </form>
-    <script src="script.js"></script>
+  <textarea id="englishText" placeholder="Enter English text"></textarea>
+  <button onclick="translate()">Translate</button>
+  <textarea id="hindiText" placeholder="Hindi translation"></textarea>
+  <script src="script.js"></script>
 </body>
 </html>
+
