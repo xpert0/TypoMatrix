@@ -1,17 +1,3 @@
-const { TextTranslatorClient } = require('@azure/ai-translation-text');
-
-// Replace with your subscription key and endpoint
-const subscriptionKey = '395fd6e90529421ebb3a4c99486e77f7';
-const endpoint = 'https://api.cognitive.microsofttranslator.com/';
-
-const client = new TextTranslatorClient(subscriptionKey, endpoint);
-
-async function translate() {
-  const englishText = document.getElementById('englishText').value;
-  const { translations } = await client.translateText([englishText], 'hi');
-  document.getElementById('hindiText').value = translations[0].text;
-}
-
     const axios = require('axios').default;
     const { v4: uuidv4 } = require('uuid');
 
