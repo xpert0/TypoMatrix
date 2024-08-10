@@ -11,7 +11,7 @@ function translate(){
 
     axios({
         baseURL: endpoint
-        url: '/translate'
+        let url: '/translate'
         method: 'post'
         headers: {
             'Ocp-Apim-Subscription-Key': key
