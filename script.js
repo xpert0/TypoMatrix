@@ -1,4 +1,3 @@
-function translate() {
     const axios = require('axios').default;
     const { v4: uuidv4 } = require('uuid');
 
@@ -32,4 +31,3 @@ function translate() {
     }).then(function(response){
         console.log(JSON.stringify(response.data, null, 4));
     })
-}
