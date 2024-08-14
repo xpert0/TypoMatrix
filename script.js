@@ -11,7 +11,7 @@ translateBtn.addEventListener('click', () => {
     fetch(`${endpoint}/translate?api-version=3.0&from=en&to=hi`, {
         method: 'POST',
         headers: {
-            'Ocp-Apim-Subscription-Key': apiKey,
+            'Ocp-Apim-Subscription-Key': '395fd6e90529421ebb3a4c99486e77f7',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify([{ Text: textToTranslate }])
