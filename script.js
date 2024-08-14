@@ -2,8 +2,8 @@ const englishText = document.getElementById('englishText');
 const hindiText = document.getElementById('hindiText');
 const translateBtn = document.getElementById('translateBtn');
 
-const apiKey = '395fd6e90529421ebb3a4c99486e77f7'; // Replace with your actual API key
-const endpoint = 'https://api.cognitive.microsofttranslator.com'; // Replace with your actual endpoint
+const apiKey = '395fd6e90529421ebb3a4c99486e77f7';
+const endpoint = 'https://api.cognitive.microsofttranslator.com';
 
 translateBtn.addEventListener('click', () => {
     const textToTranslate = englishText.value;
